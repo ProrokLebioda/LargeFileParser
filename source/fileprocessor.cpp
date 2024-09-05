@@ -18,7 +18,7 @@ namespace FileProcessor
             {
                 threadCount = 4;
             }
-            
+
             std::vector<std::thread> threads;
             std::unordered_set<std::string> wordSet;
 
@@ -58,7 +58,7 @@ namespace FileProcessor
         }
         else
         {
-            std::cerr << "Error: Could not open file" << filename << std::endl;
+            std::cerr << "Error: Could not open file: " << filename << std::endl;
         }
     }
 
