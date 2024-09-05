@@ -18,7 +18,7 @@ namespace FileProcessor
             {
                 threadCount = 4;
             }
-
+            
             std::vector<std::thread> threads;
             std::unordered_set<std::string> wordSet;
 
@@ -60,7 +60,6 @@ namespace FileProcessor
         {
             std::cerr << "Error: Could not open file" << filename << std::endl;
         }
-        
     }
 
     void ProcessBlock(const std::string &block, std::unordered_set<std::string> &wordSet)
@@ -70,7 +69,8 @@ namespace FileProcessor
 
         for (auto character : block)
         {
-            if (character == ' ')
+            // Assignment assumes that there will only be a..z (so I discard capital letters), also that there will be only a ' ' (space), but I'll discard all but letters
+            if (character < 97 || character  > 122)
             {
                 if (!word.empty())
                 {
