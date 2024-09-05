@@ -4,3 +4,4 @@ cmake -B ./build
 cmake --install ./build --config Release
 cd build/
 make
+./largeFileParser $1
